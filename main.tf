@@ -1,14 +1,13 @@
 variable "access_key" {}
 variable "secret_key" {}
-variable “region” {
- region = "us-east-1"
-}
+variable “region” {}
 
 provider "aws" {
   access_key = "${var.access_key}"
   secret_key = "${var.secret_key}"
   region     = "${var.region}"
 }
+
 terraform {
   backend "s3" {
     bucket = "rc-remote-state-bucket"
@@ -29,9 +28,8 @@ data "terraform_remote_state" "network" {
 variable "ecs_cluster" {
   default = "terraform-ecs-demo-1"
 }
-variable "capacity" {
- default = “2"
-}
+variable "capacity" {}
+
 resource "aws_ecs_cluster" "test-ecs-cluster" {
     name = "${var.ecs_cluster}"
 }
