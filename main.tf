@@ -22,8 +22,6 @@ data "terraform_remote_state" "network" {
     bucket = "rc-remote-state-bucket"
     key    = "terraform.tfstate"
     region = "us-east-1"
-    access_key = "${var.access_key}"
-    secret_key = "${var.secret_key}"
   }
 }
 
