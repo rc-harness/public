@@ -1,7 +1,7 @@
 variable "access_key" {}
 variable "secret_key" {}
 variable “region” {
- default = “us-east-1“
+ region = "us-east-1"
 }
 
 provider "aws" {
