@@ -1,6 +1,8 @@
 variable "access_key" {}
 variable "secret_key" {}
-variable "region" {}
+variable “region” {
+ default = “us-east-1"
+}
 
   
 provider "aws" {
@@ -28,7 +30,9 @@ data "terraform_remote_state" "network" {
 variable "ecs_cluster" {
   default = "terraform-ecs-demo-1"
 }
-variable "capacity" {}
+variable "capacity" {
+ default = “2"
+}
 resource "aws_ecs_cluster" "test-ecs-cluster" {
     name = "${var.ecs_cluster}"
 }
