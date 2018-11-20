@@ -22,6 +22,8 @@ data "terraform_remote_state" "network" {
     bucket = "rc-remote-state-bucket"
     key    = "terraform.tfstate"
     region = "us-east-1"
+    shared_credentials_file = "~/.aws/config"
+    profile                 = "profile2"
   }
 }
 
