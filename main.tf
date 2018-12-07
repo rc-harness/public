@@ -18,15 +18,6 @@ terraform {
   }
 }
 
-data "terraform_remote_state" "network" {
-  backend = "s3"
-  config {
-    bucket = "rc-tf-remote-state-bucket"
-    key = "terraform.tfstate"
-    region = "us-east-1"
-  }
-}
-
 resource "aws_ecs_cluster" "test-ecs-cluster" {
     name = "${var.ecs_cluster}"
 }
