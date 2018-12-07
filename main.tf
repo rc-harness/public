@@ -8,24 +8,24 @@ provider "aws" {
   region     = "${var.region}"
 }
 
-terraform {
-  backend "s3" {
-    bucket = "rc-remote-state-bucket"
-    key    = "terraform.tfstate"
-    region = "us-east-1"
-  }
-}
+#terraform {
+#  backend "s3" {
+#    bucket = "rc-remote-state-bucket"
+#    key    = "terraform.tfstate"
+#    region = "us-east-1"
+#  }
+#}
 
-data "terraform_remote_state" "network" {
-  backend = "s3"
-  config {
-    bucket = "rc-remote-state-bucket"
-    key    = "terraform.tfstate"
-    region = "us-east-1"
-    shared_credentials_file = "~/.aws/config"
-    profile                 = "profile2"
-  }
-}
+#data "terraform_remote_state" "network" {
+#  backend = "s3"
+#  config {
+#    bucket = "rc-remote-state-bucket"
+#    key    = "terraform.tfstate"
+#    region = "us-east-1"
+#    shared_credentials_file = "~/.aws/config"
+#    profile                 = "profile2"
+#  }
+#}
 
 variable "ecs_cluster" {
   default = "terraform-ecs-demo-1"
