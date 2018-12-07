@@ -35,7 +35,7 @@ resource "aws_autoscaling_group" "ecs-autoscaling-group" {
     lifecycle {
       create_before_destroy = true
     }
-    security_groups             = ["sg-023de491c552e64d4"]
+    security_groups             = ["sg-37f61246"]
     associate_public_ip_address = "true"
     key_name                    = "harness"
     user_data                   = <<EOF
