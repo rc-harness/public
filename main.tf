@@ -1,6 +1,8 @@
 variable "region" {}
 variable "ecs_cluster" {}
-variable "capacity" {}
+variable "capacity" {
+  default = "6"
+  }
 variable "access_key" {}
 variable "secret_key" {}
 
