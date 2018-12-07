@@ -1,6 +1,8 @@
 variable "access_key" {}
 variable "secret_key" {}
 variable "region" {}
+variable "ecs_cluster" {}
+variable "capacity" {}
 
 provider "aws" {
   access_key = "${var.access_key}"
@@ -26,11 +28,6 @@ provider "aws" {
 #    profile                 = "profile2"
 #  }
 #}
-
-variable "ecs_cluster" {
-  default = "terraform-ecs-demo-1"
-}
-variable "capacity" {}
 
 resource "aws_ecs_cluster" "test-ecs-cluster" {
     name = "${var.ecs_cluster}"
