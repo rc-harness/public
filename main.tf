@@ -1,7 +1,7 @@
 variable "region" {}
 variable "ecs_cluster" {}
 variable "capacity" {
-  default = "5"
+  default = "7"
   }
 
 provider "aws" {
@@ -21,7 +21,7 @@ resource "aws_ecs_cluster" "test-ecs-cluster" {
 }
 resource "aws_autoscaling_group" "ecs-autoscaling-group" {
     name                        = "ecs-asg-${var.ecs_cluster}"
-    max_size                    = "5"
+    max_size                    = "7"
     min_size                    = "1"
     desired_capacity            = "${var.capacity}"
     vpc_zone_identifier         = ["subnet-0bacaae249a2fd391","subnet-0bacaae249a2fd391"]
