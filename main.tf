@@ -1,8 +1,10 @@
 variable "region" {}
 variable "ecs_cluster" {}
 variable "capacity" {
-  default = "7"
+  default = "6"
   }
+
+#comment test
 
 provider "aws" {
   region     = "${var.region}"
