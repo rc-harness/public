@@ -17,7 +17,7 @@ module "child" {
 }
   
 module "s3" {
-  source = "git::robert.collura@harness.io/terraform.git"
+  source = "git::rc-harness/terraform.git"
 }
 
 resource "aws_ecs_cluster" "test-ecs-cluster" {
