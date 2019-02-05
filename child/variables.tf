@@ -1,1 +1,1 @@
-variable "ecs_cluster"
+variable "ecs_cluster" {}
