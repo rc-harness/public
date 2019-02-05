@@ -46,9 +46,3 @@ resource "aws_autoscaling_group" "ecs-autoscaling-group" {
                                   echo ECS_CLUSTER=${var.ecs_cluster} >> /etc/ecs/ecs.config
                                   EOF
 }
-output "clusterName" {
-    value = "${var.ecs_cluster}"
-}
-output "region" {
-    value = "${var.region}"
-}
