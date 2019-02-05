@@ -15,6 +15,10 @@ terraform {
 module "child" {
   source = "./child"
 }
+  
+module "s3" {
+  source = "git::git@github.com:robertcollura/terraform.git//s3"
+}
 
 resource "aws_ecs_cluster" "test-ecs-cluster" {
     name = "${var.ecs_cluster}"
