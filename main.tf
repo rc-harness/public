@@ -16,7 +16,11 @@ module "child" {
   source = "./child"
 }
 
-resource "aws_autoscaling_group" "ecs-autoscaling-group" {
+resource "aws_ecs_cluster" "test-ecs-cluster" {
+    name = "${var.ecs_cluster}"
+}
+
+  resource "aws_autoscaling_group" "ecs-autoscaling-group" {
     name                        = "ecs-asg-${module.child.ecs_cluster}"
     max_size                    = "7"
     min_size                    = "1"
