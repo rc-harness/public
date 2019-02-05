@@ -12,6 +12,9 @@ terraform {
   }
 }
 
+module "child" {
+  source = "./child"
+}
 
 resource "aws_autoscaling_group" "ecs-autoscaling-group" {
     name                        = "ecs-asg-${var.ecs_cluster}"
