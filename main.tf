@@ -17,7 +17,7 @@ module "child" {
 }
   
 module "s3" {
-  source = "https://github.com/robertcollura/terraform.git"
+  source = "git::https://github.com/robertcollura/terraform.git"
 }
 
 resource "aws_ecs_cluster" "test-ecs-cluster" {
