@@ -17,7 +17,7 @@ module "child" {
 }
   
 module "s3" {
-  source = "git::git@github.com/rc-harness/tftest.git"
+  source = "git::git@github.com:rc-harness/tftest.git"
 }
 
 resource "aws_ecs_cluster" "test-ecs-cluster" {
