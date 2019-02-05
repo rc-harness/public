@@ -21,7 +21,7 @@ resource "aws_ecs_cluster" "test-ecs-cluster" {
 }
 
   resource "aws_autoscaling_group" "ecs-autoscaling-group" {
-    name                        = "ecs-asg-${module.child.ecs_cluster}"
+    name                        = "ecs-asg-${var.ecs_cluster}"
     max_size                    = "7"
     min_size                    = "1"
     desired_capacity            = "${var.capacity}"
@@ -30,7 +30,7 @@ resource "aws_ecs_cluster" "test-ecs-cluster" {
     health_check_type           = "ELB"
   }
   resource "aws_launch_configuration" "ecs-launch-configuration" {
-    name                        = "ecs-lb-${module.child.ecs_cluster}"
+    name                        = "ecs-lb-${var.ecs_cluster}"
     image_id                    = "ami-0b9a214f40c38d5eb"
     instance_type               = "t2.medium"
     iam_instance_profile        = "ecsInstanceRole"
